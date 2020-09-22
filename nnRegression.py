@@ -64,6 +64,7 @@ train_data, test_data = get_data()
 combined, target = get_combined_data()
 
 combined["Cloudiness"] = combined["Cloudiness"].fillna(0)
+combined["Cloudiness"] = combined["Cloudiness"]/100
 
 
 def get_cols_with_no_nans(df, col_type):
@@ -214,7 +215,11 @@ plt.plot(x_values, y_values)
 # plt. plot(result)
 plt.show()
 
+print("Adam result")
 print(under_90_percent(result_adam))
+print("Nadam result")
 print(under_90_percent(result_Nadam))
+print("Adamax result")
 print(under_90_percent(result_Adamax))
+# print("Current result")
 # print(under_90_percent(result))

@@ -84,3 +84,9 @@ combined.drop(['index', 'Target'], inplace=True, axis=1)
 ~~~
 combined["Cloudiness"] = combined["Cloudiness"].fillna(0)
 ~~~
+
+> Данная строчка приводит к процентному виду. Если не нужно то, деактивировать.
+
+~~~
+combined["Cloudiness"] = combined["Cloudiness"]/100
+~~~
