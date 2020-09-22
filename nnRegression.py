@@ -191,6 +191,7 @@ wights_file = 'Weights-Adamax-486--10.74177.hdf5'  # choose the best checkpoint
 NN_model.load_weights(wights_file)  # load it
 NN_model.compile(loss='mean_absolute_error', optimizer='Adamax', metrics=['mean_absolute_error'])
 predictions_Adamax = NN_model.predict(test)
+np.savetxt('forecast.csv', predictions_Adamax, delimiter=';')
 result_Adamax = compare_predicted_with_real(predictions_Adamax, consumption)
 
 point1 = [0, 0.9]
